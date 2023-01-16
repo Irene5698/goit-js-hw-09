@@ -8,7 +8,7 @@ function onSubmitBtn(evt) {
   let firstDelay = Number(evt.currentTarget.delay.value);
   const stepDelay = Number(evt.currentTarget.step.value);
   const amountIteration = Number(evt.currentTarget.amount.value);
-
+  const form = evt.currentTarget;
   for (let i = 1; i <= amountIteration; i += 1) {
     createPromise(i, firstDelay)
       .then(({ position, delay }) => {
@@ -20,7 +20,8 @@ function onSubmitBtn(evt) {
         Notiflix.Notify.failure(
           `❌ Rejected promise ${position} in ${delay} ms`
         );
-      });
+      })
+      .finally(() => form.reset());
 
     firstDelay += stepDelay;
   }
