@@ -74,9 +74,9 @@ function addLeadingZero(value) {
 }
 
 function updateClockFace({ days, hours, minutes, seconds }) {
-  daysTimer.textContent = `${days}`;
-  hoursTimer.textContent = `${hours}`;
-  minutesTimer.textContent = `${minutes}`;
-  secondsTimer.textContent = `${seconds}`;
+  daysTimer.textContent = `${days.toString().padStart(2, 0)}`;
+  hoursTimer.textContent = `${hours.toString().padStart(2, 0)}`;
+  minutesTimer.textContent = `${minutes.toString().padStart(2, 0)}`;
+  secondsTimer.textContent = `${seconds.toString().padStart(2, 0)}`;
 }
 

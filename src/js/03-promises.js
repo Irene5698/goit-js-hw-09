@@ -28,7 +28,6 @@ function onSubmitBtn(evt) {
 
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
-
   return new Promise((resolved, rejected) => {
     setTimeout(() => {
       if (shouldResolve) {
